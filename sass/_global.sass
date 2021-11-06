@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap')
+
+html
+  box-sizing: border-box
+  font-family: $primary-font
+
+*, *:before, *:after 
+  box-sizing: inherit
+
+* 
+  margin:0
+  padding:0
+
+body[theme="dark-theme"]
+  --bg: #{$bg-dark-theme}
+  --primary-text-color: #{$text-white}
+  --secondary-text-color: #{$text-blue-dark-theme}
+  --card-bg-color: #{$card-bg-dark-theme}
+  --top-pattern-color: #{$top-bg-pattern-dark-theme}
+
+body[theme="light-theme"]
+  --bg: #{$bg-light-theme}
+  --primary-text-color: #{$text-blue-light-theme}
+  --secondary-text-color: #{$text-very-dark-blue-light-theme}
+  --card-bg-color: #{$card-bg-light-theme}
+  --top-pattern-color: #{$top-bg-pattern-light-theme}
+
+
+body
+  background: var(--bg)
+  color: var(--primary-text-color)
+
+h1, h2, h3, h4, h5, h6
+  font-family: $primary-font
+  font-weight: bold
