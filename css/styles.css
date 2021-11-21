@@ -2,6 +2,7 @@
 html {
   box-sizing: border-box;
   font-family: "Inter", "sans-serif";
+  font-size: 14px;
 }
 
 *, *:before, *:after {
@@ -13,30 +14,124 @@ html {
   padding: 0;
 }
 
-body[theme=dark-theme] {
+body[theme=dark] {
   --bg: #1e202a;
   --primary-text-color: white;
   --secondary-text-color: #8b97c6;
   --card-bg-color: #252a41;
   --top-pattern-color: #1f212e;
+  --bg-toggle-button: linear-gradient(to right, #378fe6, #3eda82);
 }
 
-body[theme=light-theme] {
+body[theme=light] {
   --bg: white;
   --primary-text-color: #63687e;
   --secondary-text-color: #1e202a;
   --card-bg-color: #f0f2fa;
   --top-pattern-color: #f5f7ff;
+  --bg-toggle-button: #aeb3cb;
 }
 
 body {
   background: var(--bg);
   color: var(--primary-text-color);
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.page {
+  width: 100%;
+}
+
+.page__inner {
+  width: 85%;
+  margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Inter", "sans-serif";
   font-weight: bold;
+  transition: color 0.3s;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+.overview {
+  padding: 2.9rem 0;
+}
+
+.overview__headings-wrapper {
+  padding-bottom: 1.687rem;
+  border-bottom: 1px solid var(--secondary-text-color);
+  margin-bottom: 1.5rem;
+}
+
+.overview__heading {
+  margin-bottom: 0.428rem;
+  font-size: 1.7rem;
+}
+
+.overview__resume {
+  color: var(--secondary-text-color);
+  transition: color 0.3s;
+}
+
+.theme-switcher {
+  width: 100%;
+  height: auto;
+}
+
+.theme-switcher__wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.theme-switcher__label {
+  color: var(--secondary-text-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+.theme-switcher__label:hover {
+  filter: brightness(1.3);
+}
+
+.theme-switcher__mode {
+  height: 88%;
+  width: 1.6em;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  background-color: var(--top-pattern-color);
+  transition: left 0.3s, background-color 0.1s;
+  left: 0px;
+}
+.theme-switcher__mode.theme-switcher_dark-mode_true {
+  left: 3px;
+}
+.theme-switcher__mode.theme-switcher_dark-mode_false {
+  left: calc(100% - 50% + 5px);
+}
+
+.theme-switcher__button {
+  width: 4.2rem;
+  height: 1.7rem;
+  padding: 10px;
+  border-radius: 20px;
+  background: var(--bg-toggle-button);
+  position: relative;
+  cursor: pointer;
+}
+.theme-switcher__button:hover {
+  filter: brightness(1.3);
+}
+.theme-switcher__button:hover + label {
+  filter: brightness(1.3);
 }
 
 /*# sourceMappingURL=styles.css.map */
