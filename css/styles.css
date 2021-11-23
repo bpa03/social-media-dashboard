@@ -21,15 +21,17 @@ body[theme=dark] {
   --card-bg-color: #252a41;
   --top-pattern-color: #1f212e;
   --bg-toggle-button: linear-gradient(to right, #378fe6, #3eda82);
+  --card-hover-color: #333a56;
 }
 
 body[theme=light] {
   --bg: white;
-  --primary-text-color: #63687e;
-  --secondary-text-color: #1e202a;
+  --primary-text-color: #1e202a;
+  --secondary-text-color: #63687e;
   --card-bg-color: #f0f2fa;
   --top-pattern-color: #f5f7ff;
   --bg-toggle-button: #aeb3cb;
+  --card-hover-color: #e1e3f0;
 }
 
 body {
@@ -78,6 +80,106 @@ button {
   transition: color 0.3s;
 }
 
+.overview__social-media-cards {
+  margin-top: 42px;
+}
+
+.overview__card {
+  background-color: var(--card-bg-color);
+  transition: background-color 0.3s;
+  text-align: center;
+  border-radius: 3px;
+  padding: 37px 0 30px 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.overview__card:hover {
+  background: var(--card-hover-color);
+}
+
+.overview__top-card {
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.overview__top-card_color_facebook {
+  background: #198ff5;
+}
+.overview__top-card_color_twitter {
+  background: #1ca0f2;
+}
+.overview__top-card_color_instagram {
+  background: linear-gradient(to right, #fdc468, #df4996);
+}
+.overview__top-card_color_youtube {
+  background: #c4032a;
+}
+
+.overview__card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview__card-username {
+  margin-left: 8px;
+  color: var(--secondary-text-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.overview__card-body {
+  margin: 20px 0;
+}
+
+.overview__card-body p {
+  color: var(--secondary-text-color);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.overview__card-followers {
+  font-size: 4.1rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: var(--primary-text-color);
+}
+
+.overview__card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overview__card-footer p {
+  font-weight: bold;
+  font-size: 0.857rem;
+  margin-left: 5px;
+}
+
+.overview_status_up {
+  font-weight: bold;
+  color: #1EB589;
+}
+
+.overview_status_down {
+  font-weight: bold;
+  color: #DC414C;
+}
+
+.overview__social-media-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  gap: 20px;
+}
+
 .theme-switcher {
   width: 100%;
   height: auto;
@@ -115,11 +217,11 @@ button {
   left: 3px;
 }
 .theme-switcher__mode.theme-switcher_dark-mode_false {
-  left: calc(100% - 50% + 5px);
+  left: calc(100% - 50% + 3px);
 }
 
 .theme-switcher__button {
-  width: 4.2rem;
+  width: 3.9rem;
   height: 1.7rem;
   padding: 10px;
   border-radius: 20px;
