@@ -1,0 +1,51 @@
+.statistics
+  width: 100%
+  padding: .5rem 0 3.5rem 0
+
+.statistics__header h2
+  font-size: 1.65rem
+
+.statistics__cards-wrapper
+  margin-top: 1.5rem
+  display: grid
+  gap: 1.8rem
+
+.statistics__card
+  background: var(--card-bg-color)
+  padding: 1.57rem 1.57rem 1.28rem 1.57rem
+  border-radius: 5px
+  cursor: pointer
+  transition: background .3s
+
+  &:hover
+    background: var(--card-hover-color)
+
+.statistics__card-header
+  display: flex
+  justify-content: space-between
+
+.statistics__card-header
+  color: var(--secondary-text-color)
+  font-weight: bold
+  font-size: 1rem
+
+.statistics__card-footer
+  margin: 1.5rem 0 0 0
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.statistics__status p
+  display: inline-block
+  vertical-align: sub
+  font-weight: bold
+  font-size: .9rem
+
+.statistics__card-value
+  font-size: 2rem
+
+.static_status_down
+  color: #DC414C
+
+.static_status_up
+  color: #1EB589
