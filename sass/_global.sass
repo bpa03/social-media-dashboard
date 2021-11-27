@@ -12,7 +12,7 @@ html
   margin:0
   padding:0
 
-body[theme="dark"]
+body.dark
   --bg: #{$bg-dark-theme}
   --primary-text-color: #{$text-white}
   --secondary-text-color: #{$text-blue-dark-theme}
@@ -21,7 +21,7 @@ body[theme="dark"]
   --bg-toggle-button: #{$color-toggle-button-dark-mode}
   --card-hover-color: #333a56
 
-body[theme="light"]
+body.light
   --bg: #{$bg-light-theme}
   --primary-text-color: #{$text-very-dark-blue-light-theme}
   --secondary-text-color: #{$text-blue-light-theme}
@@ -34,11 +34,8 @@ body
   background: var(--bg)
   color: var(--primary-text-color)
   transition: color .3s, background-color .3s
-
-.page
-  width: 100%
   position: relative
-
+  
   &::after
     width: 100%
     height: 260px
@@ -52,8 +49,12 @@ body
     z-index: -1
 
 .page__inner
-  width: 85%
+  width: 80%
   margin: 0 auto
+
+  @media only screen and (min-width: 700px)
+    &
+      width: 75%
 
 h1, h2, h3, h4, h5, h6
   font-family: $primary-font
